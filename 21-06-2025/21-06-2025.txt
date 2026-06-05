@@ -1,0 +1,212 @@
+String Handling:
+-----------------
+
+import java.lang.String;
+
+String str1 = "Hello";
+String str2 = "A";
+
+String str3 = "Hello";
+
+--------------------------------------------------------------------------------------------------------------------------
+
+class Test1{
+	public static void main(String...a){
+		String str1 = "Hello";
+		String str3 = "Hello";
+
+		String str4 = new String("Hello");
+
+		if(str1 == str3){
+			System.out.println("Equal");
+		}
+		else{
+			System.out.println("Not Equal");
+		}
+
+		if(str3 == str4){
+			System.out.println("Equal");
+		}
+		else{
+			System.out.println("Not Equal");
+		}
+	}
+}
+
+
+
+
+
+//output:	Equal		Not Equal
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+//strings are immutable (because of SCP memory block which holds directly assigned data)
+
+//methods: 		
+
+
+
+class Test2{
+	public static void main(String...a){
+		String s1 = "Welcome to Balaji Institute of Technology and Science";
+		String s2 = s1.toLowerCase();
+
+		System.out.println(s2);
+		System.out.println(s1.toUpperCase());
+	}
+}
+
+
+
+
+
+
+
+
+/*
+welcome to balaji institute of technology and science
+WELCOME TO BALAJI INSTITUTE OF TECHNOLOGY AND SCIENCE
+
+*/
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+
+class Test4{
+	public static void main(String...a){
+		String s1 = "Welcome to Balaji Institute of Technology and Science";
+		
+		//check for startswith
+		Boolean flag = s1.startsWith("Welcome");
+		
+		if( flag == true){
+			System.out.println("Yes. "+s1+"Ends with welcome");
+		}
+		else{
+			System.out.println("No !");
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+//	Yes. Welcome to Balaji Institute of Technology and ScienceEnds with welcome
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+class Test5{
+	public static void main(String...a){
+		String s1 = "Welcome to BITS college. It is good to start training ";
+		String searchText = "to";
+
+		int index = s1.lastIndexOf(searchText);
+
+		if(index > 0){
+			System.out.println("found at "+index+" position");
+		}
+		else{
+			System.out.println("not found");
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+//found at 36 position
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+String Tokenizer:
+
+import java.util.StringTokenizer;
+class Test10{
+	public static void main(String...a){
+		String s = "Hello, welcome to bits";
+
+		String delimiter=" ";
+
+		StringTokenizer st = new StringTokenizer(s, delimiter);
+
+		int nTokens = st.countTokens();
+
+		System.out.print("No. of tokens = "+nTokens);
+	}
+}
+
+
+
+
+//	No. of tokens = 4
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

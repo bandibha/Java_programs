@@ -1,0 +1,461 @@
+Java Fundamentals:
+
+JDK
+JVM: Java virtual machine (Heart of java)
+
+a program can be written without using a header file 
+
+
+p1.c
+
+int add(){
+	int c,x=20,y=30;
+	c=x+y;
+	return c;
+}
+
+
+#include "p1.c"
+#include <stdio.h>
+void main() {
+	printf("%d", add());
+}
+
+
+---------------------------------------------------------------------
+basic java prog structure
+
+
+package user_defined_name
+
+import statements
+interface interfacename{
+}
+class UserDefinedClassName{
+}
+
+class MainClassName{
+	public static void main(String...args){
+	}
+}
+
+----------------------------------------------------------------------------------
+
+WORA: Write Once Run Anywhere
+green project is the 1st project in java
+(the remote for 1 brand TV won't work for another brand  so there were mainly 2 problems : operating system and processing system)
+
+processor: ALU(Arithmetic Logic Unit)
+	   only performs arithmetic operations
+	Ex: intel processor, Motorola processor 
+
+
+
+p1.c		--->	compile(Turbo c)
+			ALt+F9			---> Run
+			Success:		---> Ctrl + F9
+			p1.obj				output
+							pl.exe(exe: executable file)
+			alt+f5				to see o/p
+
+
+-------------------------------------------------------------------------------------------
+
+
+Source program 		universal code
+
+
+
+Addition of two numbers
+
+INTEL PROCESSOR CODE							AMD PROCESSOR CODE
+
+MOVE AX, 000AH								MV AL A
+MOVE BX, 000BH								MV BL B
+ADD BX									ADD AL BL
+MOVE CX,AX
+INT A5
+
+
+
+every code has to be generated as byte code (0 & 1) , i.e, universal code. No intermediate. code will be generated.
+
+Java is a interpreted programming lang (line by line at runtime)
+
+c is a compiled programming lang (total program compiled at a time)
+
+----------------------------------------------------------------------------------------------
+
+Robustness:  strength of the program 
+strength is defined as it has to be capable of handling run time errors
+
+
+void main(int argc, char* argv)
+{
+	int c = 20/0;
+	printf("%d",c);
+	printf("helloworld");
+}
+
+O/P:
+	runtime error
+	takes only infinite time  because total code in c where 20/0 is infinite. so the loop is infinite
+
+
+
+public static void main(String...args)
+{
+	int c = 20/0;
+	System.outprintf("%d",c);
+	System.out.printf("hi");
+}
+
+O/P:
+	runtime error
+	takes only 1 sec because line by line in java where 20/0 is infinite
+------------------------------------------------------------------------------------------------------
+
+
+Simple: 
+	follows c syntax(which is simple)
+	accepts c ++ features
+------------------------------------------------------------------------------------------------------
+
+Dynamic:
+	runtime memory management(reduces the memory wastage)
+	garbage collector automatically allocate the memory and deallocate the memory(mark(declare and used) and sweep(declared but not used))
+
+
+	int a[]=new int[100]
+	a[0]=1;
+	a[1]=3;
+	for(int i: a)
+	{
+		S.o.p(i);
+	} 
+	
+
+--> 400 bytes were declared  (int= 4 bytes , array has 100 numbers 4*100=400)
+
+------------------------------------------------------------------------------------------------------
+
+Jagged array
+
+a[0]= new int[5];
+a[1]= new int[3];
+a[2]= new int[4];
+
+
+
+in one line statement :
+	a[] = {{1,2,3,4,5}, {6,7,8}, {9,10,11,12}};
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+
+
+operators
+
+1. uninary 
+
+c= -a;		#uninary minus
+c= +a;		#uninary plus
+
+
+instanceof()
+	this just says that if an object is created or not(if created returns TRUE, if not returns FALSE)
+
+	
+instanceof()
+Employee emp = new Employee();
+S.o.p("obj created")	#pending
+
+
+
+2. binary
+
++	-	*	/	%	
+&&	||
+&	|	^	>>	<<
+>>>(right shift filled with zero(MSB))
+
+
+>	<	>=	<=
+!=	==
+
+
+1 byte value : 0 to 255
+
+3. Terinary
+
+
+?:			(conditional operation)
+
+int number = 30;
+(number % 2) ? S.o.p("Even"):S.o.p("odd");
+(number > 0) ? S.o.p("+ve"):S.o.p("-ve");
+
+
+Based on the functionality:
+1.	arithmetic
+2.	relational
+3.	logical
+4.	bitwise
+5.	shorthand-assignment
+6.	special
+	; , .	instanceof()
+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+Data types
+
+
+	byte	short	 int	 long
+	float	double
+	char	Boolean
+	String(we are using as a datatype but it is a class)
+
+
+keywords:
+
+
+		64 keywords
+
+	if	else	class	break	continue
+	try	throw	throws	catch	finally		final
+	super	static	.............
+
+
+Access Specifiers:
+
+	inheritance:
+		super	abstract	final	
+		private		public		protected	default
+	interface implements
+		this
+
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+JVM Architecture		(in book)
+
+
+JVM --- takes .class file as input
+
+
+
+class One{
+}
+
+class Two{
+}
+
+class Three {
+	public static void main(String...a){
+		One ob1 = new One();
+		Two ob2 = new Two();
+	}
+class Four{
+	static {
+		S.o.p("hello")
+	}
+class Five{
+	static int var1=20;
+	static int var2=30;
+	int var3 = 50;
+}
+}
+
+
+Note: Java searches for two things 
+	--> if a program contains the class or not
+	--> after that it verifies that that class has main method or not
+	-->if main method is found in that class it executes it.
+	-->no object has to be created to static 
+
+--> if the program contains the static keyword then it goes to the method area
+
+		static {
+
+		}
+
+
+--> if the program contains the non-static keyword then it goes to the heap
+
+
+		non-static {
+		
+		}
+
+
+
+class Test {
+	{
+		int x=20;int y=30;
+	}
+	int x=100; int y=300;
+	void fun(){
+		S.o.p(x);
+		S.o.p(y);
+	}
+}
+
+
+Note: address of the variable is given as "hash code"
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Stack:
+	functions, expressions are evaluation , recursion functions , polish notations (prefix, infix, postfix), 
+
+
+
+-->expression tree is used for calculations not BODMAS rule by computers
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+program counter: 
+	stores the address of the next line
+
+Native method area : printf
+----------------------------------------------------------------------------------------------------------------------
+
+JIT compiler: (Just in time)
+
+when we have the iteration programs like for , while loops etc...  jit will be used
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Control Statements:
+
+1.	Decision making / Conditional statements
+		
+	a. simple if 
+	b. if-else
+	c. nested-if
+	d. else-if ladder
+	e. switch case	
+	 
+Logical examples:
+
+	int n = 20;
+	
+	if (n>0)
+	S.o.p(n--);
+
+	if (n>0)
+	S.o.p(--n);
+
+
+O/p : 20  18
+	first n will be printed the decrement so for first statement 20 will be printed
+	n-- is post decrement so 20 ---> 19
+	--n then pre decrement so 19 ---> 18
+------------------------------------------------------------------------------------------------------------------
+
+	int a = 1;
+	int c = a++ + ++a
+
+O/P : 4  
+	first calculate for ++a and the for a++
+--------------------------------------------------------------------------------------------------------------------------
+
+
+int  c = 20;
+int  d = c++ + ++c;
+
+
+int a= 1;
+int c = ++a + ++a + ++a + a++
+
+O/P  : 13
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Programs: 
+
+1. demonstrate operators
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

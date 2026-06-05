@@ -1,0 +1,82 @@
+Patterns:
+
+
+a[] = {11,2,23,5,45,6,88,56}
+
+
+--------------------------------------------------------------------------------------
+
+
+Demo on wrapper classes:
+--------------------------
+
+* Autoboxing:	primitive to object
+
+* Unboxing:	object to primitive
+
+
+
+
+Wrapper classes:						Built-in Datatypes:
+-----------------						---------------------
+
+Integer								int
+short								short
+Byte								byte
+Long								long
+float								float
+Double								double
+Boolean								boolean
+Character							char
+
+
+-------------------------------------------------------------------------------------------
+
+command line arguments:
+
+	int x = Interger.parseInt(args[0]);
+
+
+--------------------------------------------------------------------------------------------
+
+Class Variables:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
